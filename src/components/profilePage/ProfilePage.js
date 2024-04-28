@@ -16,7 +16,7 @@ const ProfilePage = () => {
     if (username) {
       getData();
     }
-  }, [query])
+  }, [])
   // console.log("repo=>",repoData);
   async function getData() {
     try{

@@ -5,7 +5,8 @@ import { fetchRepoData } from '../Functions';
 
 const RepositoryPage = () => {
   const { username, repoName } = useParams();
-  const [repoDetails, setRepoDetails] = useState([]);
+  const [repoDetails, setRepoDetails] = useState();
+  const [commitEvents, setCommitEvents] = useState();
 
   useEffect(() => {
     if (repoName) {
@@ -14,31 +15,40 @@ const RepositoryPage = () => {
   }, [])
 
   async function getData() {
-    const repoData = await fetchRepoData(`${username}/${repoName}`);
-    setRepoDetails(repoData)
-
+    const repoData = await fetchRepoData(`${username}/${repoName}/contents`);
+    const commitEvents = await fetchRepoData(`${username}/${repoName}/events`);
+    setCommitEvents(commitEvents);
+    setRepoDetails(repoData);
+    console.log(repoDetails);
   }
-  // console.log(repoDetails);
+  console.log(repoDetails);
+
   return (
     <div>
       <Link to="/"><h2 className='dancing-heading'>{`<< Back to Home`}</h2></Link>
       <Link to={`/profile/${username}`}><h2 className='dancing-heading1'>{`<< Back`}</h2></Link>
       <header className='main-div'>
+        <h1>In Progresh...</h1>
         <div>
           <table>
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Country</th>
-                <th>Occupation</th>
+                <th></th>
+                <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>John Doe</td>
-                <td>USA</td>
-                <td>Engineer</td>
-              </tr>
+              {
+               !repoDetails&&repoDetails.length > 0 && repoDetails.map((item)=>{
+                  return (<tr>
+                    <td>{item.name}</td>
+                    <td>{commitEvents[0].payload.commits[0].message}</td>
+                    <td>Engineer</td>
+                  </tr>)
+                })
+              }
+              
             </tbody>
           </table>
         </div>

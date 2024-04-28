@@ -1,6 +1,8 @@
 import axios from "axios";
 
 export const fetchUserData = (username) => {
+    // https://api.github.com/repos/ik-deep/github-page-app/events
+
     const userData = axios.get(`https://api.github.com/users/${username}`)
         .then(res => {
             return res.data;
@@ -13,8 +15,7 @@ export const fetchUserData = (username) => {
 }
 
 export const fetchRepoData = (username) => {
-    const userData = axios.get(`https://api.github.com/${username}/tree/main`)
-    // https://github.com/shananasim16/Amazon-clone/tree/main
+    const userData = axios.get(`https://api.github.com/repos/${username}`)
         .then(res => {
             return res.data;
         })
