@@ -1,0 +1,52 @@
+.main-div{
+    padding: 35px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    color: #a3b5cd;
+}
+
+.dancing-heading {
+    position: absolute;
+    margin-left: 50px;
+    animation: danceAnimation 2s ease infinite;
+    background: linear-gradient(to right, #a3089e, #0CBABA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .dancing-heading1 {
+    position: absolute;
+    margin-left: 275px;
+    animation: danceAnimation 2s ease infinite;
+    background: linear-gradient(to right, #a3089e, #0CBABA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tr{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+td,th{
+    padding: 8px;
+    text-align: left;
+}
+
+  
+  @keyframes danceAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-8px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }

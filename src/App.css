@@ -1,38 +1,177 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../public/images/git2.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.container {
+  text-align: center;
+  
+}
+
+.github-logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+@keyframes slideInQ {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.quote {
+  margin-top: 50px;
+  font-style: italic;
+  animation: slideInQ 2s ease forwards;
+  background: linear-gradient(to right, #a3089e, #0CBABA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #a3089e, #0CBABA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideIn 0.9s ease forwards;
+}
+
+.formDiv {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  height: 52vh;
+  
+}
+.form-input {
+   margin-right: 20px; /*Add spacing between form input and image */
+}
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-left: -236px;
+  background: linear-gradient(to right, #a3089e, #0CBABA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+input[type="text"] {
+  width: 30%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  color: #C97BDE;
+  background-color: transparent;
+}
+input[type="submit"] {
+  background-color:  #8181E6;;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+input[type="text"]::placeholder {
+ color: #bdb9b9;
+}
+input[type="submit"]:hover {
+  background-color:  #C97BDE;;
+}
+.man-images img {
+  width: 45%;
+  height: auto;
+  margin-left: 0;
+  margin-top: 20px;
+  animation: slideIn 0.8s ease forwards;
+}
+
+.form-input{
+  padding: 30px;
+  display: flex;
+  margin-left: 12rem;
   flex-direction: column;
   align-items: center;
+  width: 22%;
+  height: 42vh;
+  max-width: 600px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow: hidden;
+  background: linear-gradient(to right, #a3089e, #0CBABA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideIn 0.8s ease forwards;
+}
+input[type="submit"]:active{
+  background-color: transparent;
+}
+.github-info{
+  margin-top: 4rem;
+  animation: slideIn 0.4s ease forwards;
 }
 
-.App-link {
-  color: #61dafb;
+
+@keyframes placeholderAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+
+/*media query*/
+@media screen and ((width>600px) and (width<1000px)) {
+    .man-images img{
+
+      width: 50%;
+    margin-left: 102px;
+    }
+    .form-input{
+  
+      margin-left: 2rem;
+      width: 40%;
+    }
+}
+
+@media screen and (width<600px) {
+ 
+  .form-input{
+    display: none;
   }
 }
+

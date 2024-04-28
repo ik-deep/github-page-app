@@ -1,0 +1,250 @@
+header {
+    /* background-color: #24292e; */
+    /* background: linear-gradient(to right, #a3089e, #0CBABA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    padding: 35px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    color: #a3b5cd;
+
+}
+
+.container {
+    align-items: start;
+}
+
+.avatar {
+    /* width: 80px;
+    height: 80px; */
+    margin-right: 20px;
+}
+
+.avatar img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.user-info h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.user-info p {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    color: #8b949e;
+    /* GitHub's secondary text color */
+}
+
+.follow-button {
+    /* background-color: linear-gradient(to right, #f48bf0, #3ddfdf); */
+    /* background: linear-gradient(to right, #a3089e, #0CBABA); */
+    /* color: white; */
+    border: none;
+    padding: 10px 20px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.connectivity {
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+.bio {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #8b949e;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: #8b949e;
+}
+
+.select-box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(61, 60, 60);
+    color: #8b949e;
+    margin-right: 10px;
+    font-size: 1rem;
+
+}
+
+select option {
+    /* background-color: rgb(61, 60, 60); */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.repositories {
+    list-style-type: none;
+    padding: 0;
+    height: 80vh;
+    overflow-y: scroll;
+
+}
+.repositories a{
+    text-decoration: none !important;
+    color: #8b949e;;
+}
+
+span {
+    padding: 5px;
+    /* margin-right:20px ; */
+}
+
+.li-item>li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.public-repo {
+    border: 1px solid white;
+    width: auto;
+    height: 1rem;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 10px;
+    color: #bfc7d0;
+    
+}
+.circle1 {
+    display: inline-block;
+    text-align: center;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(3, 122, 3);
+}
+.circle {
+    display: inline-block;
+    text-align: center;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.li-item {
+    background-color: rgb(61, 60, 60,0.5);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-decoration: none !important;
+    /* font-weight: 700; */
+
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 30%;
+
+}
+
+.repo-list-table {
+    width: 80%;
+    padding: 20px;
+}
+
+@media screen and ((width>600px) and (width<1000px)) {
+    .select-box {
+        margin-top: 10px;
+    }
+
+    .search-bar {
+        display: block;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .search-bar input[type="text"] {
+        padding: 10px;
+        width: 95%;
+    }
+
+    select {
+        width: 100%;
+    }
+}
+
+@media screen and (width<600px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .profile-details {
+        padding: 20px;
+        max-width: 73%
+    }
+
+    .select-box {
+        margin-top: 10px;
+    }
+
+    .search-bar {
+        display: block;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .search-bar input[type="text"] {
+        padding: 10px;
+        width: 95%;
+    }
+
+    select {
+        width: 100%;
+    }
+}
+.dancing-heading {
+    position: absolute;
+    margin-left: 50px;
+    animation: danceAnimation 2s ease infinite;
+    background: linear-gradient(to right, #a3089e, #0CBABA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  @keyframes danceAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
