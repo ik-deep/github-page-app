@@ -28,7 +28,7 @@ const RepositoryPage = () => {
       <Link to="/"><h2 className='dancing-heading'>{`<< Back to Home`}</h2></Link>
       <Link to={`/profile/${username}`}><h2 className='dancing-heading1'>{`<< Back`}</h2></Link>
       <header className='main-div'>
-        <h1>In Progresh...</h1>
+        <h1>In Progress...</h1>
         <div>
           <table>
             <thead>
@@ -40,13 +40,13 @@ const RepositoryPage = () => {
             </thead>
             <tbody>
               {
-               !repoDetails&&repoDetails.length > 0 && repoDetails.map((item)=>{
-                  return (<tr>
-                    <td>{item.name}</td>
-                    <td>{commitEvents[0].payload.commits[0].message}</td>
-                    <td>Engineer</td>
-                  </tr>)
-                })
+              //  repoDetails&&repoDetails.map((item)=>{
+              //     return (<tr>
+              //       <td>{item.name}</td>
+              //       <td>{commitEvents[0].payload.commits[0].message}</td>
+              //       <td>Engineer</td>
+              //     </tr>)
+              //   })
               }
               
             </tbody>
