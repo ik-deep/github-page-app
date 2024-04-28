@@ -1,27 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import './styles.css';
 import { Link, useParams } from 'react-router-dom';
-import { fetchRepoData} from '../Functions';
+import { fetchRepoData } from '../Functions';
 
 const RepositoryPage = () => {
   const { username, repoName } = useParams();
-
   const [repoDetails, setRepoDetails] = useState([]);
 
-  useEffect(()=>{
-       if(repoName){
-        getData();
-       }
-  },[])
+  useEffect(() => {
+    if (repoName) {
+      getData();
+    }
+  }, [])
 
   async function getData() {
     const repoData = await fetchRepoData(`${username}/${repoName}`);
     setRepoDetails(repoData)
 
   }
-
-
-console.log(repoDetails);
+  // console.log(repoDetails);
   return (
     <div>
       <Link to="/"><h2 className='dancing-heading'>{`<< Back to Home`}</h2></Link>

@@ -18,7 +18,7 @@ const LandingPage = () => {
        <h1>Welcome to GitHub Landing Page</h1>
        <div className='formDiv'>
        <div className='form-input'>
-       <p>GitHub is a development platform inspired by the way you work. From open source to business, you can host and review code, manage projects, and build software alongside millions of other developers.</p>
+       <p style={{'line-height': "25px"}}>GitHub is a development platform inspired by the way you work. From open source to business, you can host and review code, manage projects, and build software alongside millions of other developers.</p>
       <img src={`https://qph.cf2.quoracdn.net/main-qimg-729a22aba98d1235fdce4883accaf81e`}alt="GitHub Logo" className="github-logo"/>
         </div> 
        <div className='man-images'>
@@ -26,12 +26,15 @@ const LandingPage = () => {
         </div>
      </div>
     <div className="github-info">
-    <label htmlFor='username'>Enter your GitHub username to get started:</label>
+      <div className='input-form'>
+      <label htmlFor='username'>Enter your GitHub username to get started:</label>
             <form  >
                <input type="text" placeholder="Enter your GitHub username"   value={username}
                 onChange={(e) => setUsername(e.target.value)} id='username' required/>
               <Link to={`/profile/${username}`}> <input type="submit" style={{marginLeft:"10px"}} value="Submit"/></Link>
             </form>
+      </div>
+   
       </div>
 
     <div className="quote">

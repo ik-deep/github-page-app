@@ -19,12 +19,15 @@ const ProfilePage = () => {
   }, [query])
   // console.log("repo=>",repoData);
   async function getData() {
-    const userProfileData = await fetchUserData(username);
-    const userRepo = await fetchUserData(`${username}/repos`);
-    setData(userProfileData);
-    setRepoData(userRepo)
-    setRepoFilterData([...repoData, ...userRepo]);
-  }
+    try{
+      const userProfileData = await fetchUserData(username);
+      const userRepo = await fetchUserData(`${username}/repos`);
+      setData(userProfileData);
+      setRepoData(userRepo)
+      setRepoFilterData([...repoData, ...userRepo]);
+    }catch(err){
+       return (<h1>Please enter the existing username!</h1>);
+    }}
 
   const handleSearch = (e) => {
     setQuery(e.target.value);
@@ -39,8 +42,7 @@ const ProfilePage = () => {
     <div>
         <Link to="/"><h2 className='dancing-heading'>{`<< Back to Home`}</h2></Link> 
       <header className='main-div'>
-   
-        <div className='profile-details'>
+   {data&&(  <div className='profile-details'>
           <div className="avatar">
             <img src={data && data.avatar_url} alt="User Avatar" />
           </div>
@@ -56,9 +58,9 @@ const ProfilePage = () => {
           <div><span className='circle1'></span><span>{data.followers}  Followers  </span>   <span className='circle1'></span><span>{data.following}  Following</span></div>
           <div><span>{data.location ? "Location : " + data.location : ""}</span></div>
           <div><span>{data.blog && data.blog != null ? " Blog : " + data.blog : ""}</span></div>
-        </div>
+        </div>)}
         <div className='repo-list-table'>
-          <div className="search-bar">
+        { data && (<div className="search-bar">
             <input type="text" placeholder="Find a repository..." value={query}
               onChange={handleSearch} />
                {/* <input type="submit" style={{marginLeft:"10px"}} value="Submit" onClick={handleSearch}/> */}
@@ -91,6 +93,7 @@ const ProfilePage = () => {
               </select>
             </div>
           </div>
+          )}
           <ul className="repositories">
             {
               repoFilterData && repoFilterData.length > 0 ? repoFilterData.map((item, index) => {
