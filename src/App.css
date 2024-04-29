@@ -16,6 +16,8 @@ body {
 
 .container {
   text-align: center;
+  background-color: rgba(54, 53, 53, 0.5);
+  height: 100vh;
   
 }
 
